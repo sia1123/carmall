@@ -1,0 +1,102 @@
+.cart-item {
+    display: flex; /* Flexbox를 이용하여 요소들을 가로로 나란히 배치 */
+    align-items: center; /* 세로 정렬 */
+    padding: 10px 0; /* 위아래 여백 설정 */
+    border-bottom: 1px solid #eee; /* 하단 테두리 설정 */
+}
+
+.cart-item:last-child {
+    border-bottom: none; /* 마지막 아이템의 하단 테두리 제거 */
+}
+
+.item-select {
+    flex: 1; /* 1:1 비율로 자동 크기 설정 */
+    text-align: center; /* 텍스트 가운데 정렬 */
+}
+
+.item-image img {
+    width: 50px; /* 이미지 너비 설정 */
+    height: 50px; /* 이미지 높이 설정 */
+    border: 1px solid #ccc; /* 테두리 설정 */
+    padding: 60px; /* 안쪽 여백 설정 */
+    background-color: #f9f9f9; /* 배경색 설정 */
+}
+
+.item-details {
+    flex: 2; /* 2:1 비율로 자동 크기 설정 */
+    padding: 0 10px; /* 좌우 여백 설정 */
+}
+
+.item-details p {
+    margin: 0; /* 마진 초기화 */
+    margin-bottom: 5px; /* 아래쪽 여백 설정 */
+}
+
+.item-quantity {
+    flex: 2; /* 2:1 비율로 자동 크기 설정 */
+    display: flex; /* Flexbox를 이용하여 요소들을 가로로 나란히 배치 */
+    align-items: center; /* 세로 정렬 */
+}
+
+.item-quantity button {
+    margin: 0 5px; /* 버튼 사이 여백 설정 */
+    background-color: #f0f0f0; /* 배경색 설정 */
+    border: 1px solid #ccc; /* 테두리 설정 */
+    padding: 5px 10px; /* 안쪽 여백 설정 */
+    cursor: pointer; /* 커서 모양 변경 */
+}
+
+.item-quantity button:hover {
+    background-color: #e0e0e0; /* 호버 시 배경색 변경 */
+}
+
+.item-price {
+    flex: 3; /* 3:1 비율로 자동 크기 설정 */
+    text-align: right; /* 텍스트를 오른쪽 정렬 */
+}
+
+.item-price p {
+    margin: 0; /* 마진 초기화 */
+    margin-bottom: 5px; /* 아래쪽 여백 설정 */
+}
+
+.cart-actions {
+    display: flex; /* Flexbox를 이용하여 요소들을 가로로 나란히 배치 */
+    justify-content: space-between; /* 요소들을 양쪽으로 분산 배치 */
+    align-items: center; /* 세로 정렬 */
+    padding: 20px 0; /* 위아래 여백 설정 */
+}
+
+.cart-actions .delete {
+    background-color: #f44336; /* 배경색 설정 */
+    color: white; /* 글자색 설정 */
+    border: none; /* 테두리 제거 */
+    padding: 10px 20px; /* 안쪽 여백 설정 */
+    cursor: pointer; /* 커서 모양 변경 */
+}
+
+.cart-actions .delete:hover {
+    background-color: #d32f2f; /* 호버 시 배경색 변경 */
+}
+
+.order-summary {
+    text-align: right; /* 텍스트를 오른쪽 정렬 */
+}
+
+.order-summary p {
+    margin: 0; /* 마진 초기화 */
+    margin-bottom: 10px; /* 아래쪽 여백 설정 */
+}
+
+.order-summary button {
+    background-color: #2196F3; /* 배경색 설정 */
+    color: white; /* 글자색 설정 */
+    border: none; /* 테두리 제거 */
+    padding: 10px 20px; /* 안쪽 여백 설정 */
+    cursor: pointer; /* 커서 모양 변경 */
+    margin-left: 10px; /* 왼쪽 여백 설정 */
+}
+
+.order-summary button:hover {
+    background-color: #eff4f8; /* 호버 시 배경색 변경 */
+}
