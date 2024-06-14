@@ -1,0 +1,96 @@
+body {
+    font-family: Arial, sans-serif; /* 기본 폰트 설정 */
+    background-color: #f8f9fa; /* 배경색 설정 */
+    margin: 0; /* 외부 여백 제거 */
+    padding: 0; /* 내부 여백 제거 */
+}
+
+.qna-container {
+    width: 60%; /* 너비 설정 */
+    margin: 50px auto; /* 가운데 정렬과 상단 여백 설정 */
+    padding: 20px; /* 내부 여백 설정 */
+    background-color: #fff; /* 배경색 설정 */
+    border: 1px solid #ddd; /* 테두리 설정 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 그림자 효과 설정 */
+}
+
+h1 {
+    font-size: 1.5em; /* 글자 크기 설정 */
+    color: #333; /* 글자 색상 설정 */
+    margin: 0 0 20px 0; /* 마진 설정 */
+}
+
+.qna-buttons {
+    display: flex; /* Flexbox를 사용하여 버튼을 가로로 배치 */
+    gap: 10px; /* 버튼 간의 간격 설정 */
+    justify-content: flex-start; /* 버튼을 왼쪽 정렬 */
+    margin-bottom: 10px; /* 하단 여백 설정 */
+}
+
+.qna-buttons button {
+    background-color: transparent; /* 배경색 투명 설정 */
+    color: #333; /* 글자 색상 설정 */
+    border: 1px solid #333; /* 진한 회색 테두리 설정 */
+    padding: 5px 15px; /* 내부 여백 설정 */
+    cursor: pointer; /* 커서 모양 변경 */
+    border-radius: 5px; /* 테두리 둥글게 설정 */
+    font-size: 0.9em; /* 글자 크기 설정 */
+    transition: background-color 0.3s, color 0.3s; /* 배경색 및 글자 색상 전환 효과 */
+}
+
+.qna-buttons button:hover {
+    background-color: #333; /* 호버 시 배경색 변경 */
+    color: white; /* 호버 시 글자 색상 변경 */
+}
+
+.divider {
+    border: 0; /* 기본 테두리 제거 */
+    border-top: 1px solid #ddd; /* 상단 테두리 추가 */
+    margin: 0 0 10px 0; /* 상단 및 하단 여백 설정 */
+}
+
+.qna-table {
+    width: 100%; /* 테이블 너비 */
+    border-collapse: collapse; /* 테이블 경계선 중복 제거 */
+}
+
+.qna-table th, .qna-table td {
+    text-align: left; /* 텍스트 왼쪽 정렬 */
+    padding: 8px; /* 내부 여백 */
+    border-bottom: 1px solid #ddd; /* 하단 테두리 */
+}
+
+.qna-table th {
+    background-color: #f4f4f4; /* 테이블 헤더 배경색 */
+}
+
+.qna-table td {
+    position: relative; /* 상대 위치 지정 */
+}
+
+.qna-table .td-number {
+    padding-left: 20px; /* 왼쪽 패딩 설정 */
+}
+
+.new-post {
+    color: red; /* 빨간색 */
+    font-style: italic; /* 이탤릭체 */
+    margin-left: 5px; /* 왼쪽 여백 */
+}
+
+.answer {
+    display: none; /* 초기 상태에서는 숨김 */
+    background-color: #fafafa; /* 배경색 */
+    border-top: 1px solid #ddd; /* 상단 테두리 */
+    padding: 10px; /* 내부 여백 */
+}
+
+.answered {
+    font-weight: bold; /* 굵게 */
+    color: blue; /* 파란색 */
+}
+
+.pending {
+    color: green; /* 초록색 */
+    text-decoration: underline; /* 밑줄 */
+}

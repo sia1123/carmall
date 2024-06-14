@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q&A 게시판</title>
+    <link rel="stylesheet" href="qna.css">
+</head>
+<body>
+    <div class="qna-container">
+        <h1>Q&A 게시판</h1>
+        <div class="qna-buttons">
+            <button onclick="writePost()">글쓰기</button>
+            <button onclick="viewMyPosts()">내 글 확인</button>
+        </div>
+        <hr class="divider">
+        <table class="qna-table">
+            <thead>
+                <tr>
+                    <th class="th-number">글번호</th>
+                    <th>제목</th>
+                    <th>작성자</th>
+                    <th>등록날짜</th>
+                    <th>답변여부</th>
+                </tr>
+            </thead>
+            <tbody id="qna-tbody">
+                <!-- 글 목록이 여기에 추가됩니다 -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        let nextPostNumber = 4; // 다음 글 번호
+
+        // 샘플 글 초기화
+        document.addEventListener("DOMContentLoaded", function() {
+            addPost("HTML이란 무엇인가요?", "김철수", "2024-06-12", "답변완료");
+            addPost("CSS의 역할은 무엇인가요?", "이영희", "2024-06-11", "관리자 확인 중");
+            addPost("JavaScript는 무엇인가요?", "박민수", "2024-06-10", "답변대기");
+        });
+
+        function addPost(title, author, date, status) {
+            const tbody = document.getElementById("qna-tbody");
+
+            // 새로운 글 번호와 New! 표시 설정
+            const newPostNumber = nextPostNumber++;
+            const newPostHTML = `
+                <tr>
+                    <td class="td-number">
+                        ${newPostNumber} ${newPostNumber === nextPostNumber - 1 ? '<span class="new-post">New!</span>' : ''}
+                    </td>
+                    <td onclick="toggleAnswer(this)">${title}</td>
+                    <td>${author}</td>
+                    <td>${date}</td>
+                    <td class="td-status ${status === '답변완료' ? 'answered' : status === '관리자 확인 중' ? 'pending' : ''}">
+                        ${status}
+                    </td>
+                </tr>
+                <tr class="answer">
+                    <td colspan="5">글 내용이 여기에 표시됩니다.</td>
+                </tr>
+            `;
+
+            // 글을 맨 위에 추가
+            tbody.insertAdjacentHTML('afterbegin', newPostHTML);
+
+            // 이전 글에서 New! 표시 제거
+            const previousNew = tbody.querySelector('.new-post');
+            if (previousNew) {
+                previousNew.remove();
+            }
+        }
+
+        function toggleAnswer(element) {
+            const nextRow = element.parentElement.nextElementSibling;
+            if (nextRow && nextRow.classList.contains('answer')) {
+                nextRow.style.display = nextRow.style.display === "table-row" ? "none" : "table-row";
+            }
+        }
+
+        function writePost() {
+            // 새 글 작성
+            const title = prompt("제목을 입력하세요:");
+            if (!title) return;
+
+            const author = prompt("작성자를 입력하세요:");
+            if (!author) return;
+
+            const date = new Date().toISOString().split('T')[0]; // 현재 날짜
+            const status = "답변대기";
+
+            addPost(title, author, date, status);
+        }
+
+        function viewMyPosts() {
+            alert("내 글 확인 기능은 아직 구현되지 않았습니다."); // 내 글 확인 버튼 클릭 시 동작
+        }
+    </script>
+</body>
+</html>
